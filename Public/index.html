@@ -10,10 +10,14 @@
     <header></header>
     
     <main ng-controller="MainController as vm">
-        <div>
+        <div class='photos'>
             <ul>
-                <li ng-repeat='post in vm.all'>
-                    {{post.post_url}}
+                <li ng-repeat='photoPost in vm.all.photoPosts'>
+                    <a ng-href="{{photoPost.url}}" target='_blank'>
+                        <img ng-repeat='photo in photoPost.photos' ng-src="{{ photo.original_size.url }}" alt="">
+                        {{ photoPost.blogName }}
+                    
+                    </a> : {{ photoPost.type }}
                 </li>
             </ul>
         </div>

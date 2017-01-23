@@ -19,8 +19,9 @@
             $http.get('/api')
             .then(function(res) {
                 vm.all = res.data
+                console.log('res', vm.all)
             }, function(err) {
-                console.log(err)
+                console.log('error', err)
             })
         }
     }
