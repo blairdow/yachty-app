@@ -9,9 +9,9 @@ var yachty = function(req, res, next) {
     
     request(`https://api.tumblr.com/v2/tagged?tag=lil+yachty&api_key=${key}`, function(err, response, body){
         if(!err && res.statusCode == 200) {
-            var x = JSON.parse(response.body)
-            console.log(x.response[0])
-            res.json(x.response[0])
+            var content = JSON.parse(response.body).response
+//            console.log(content.response[0])
+            res.json(content)
         }
     })
 }
